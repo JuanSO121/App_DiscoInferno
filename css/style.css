@@ -75,3 +75,35 @@ ul {
 li {
     margin-bottom: 10px;
 }
+/* Estilo para hacer los botones circulares y acercarlos al carrusel */
+.carousel-control-prev {
+    top: 50%;
+    width: 40px; /* Ajusta el ancho según sea necesario para que sea un círculo */
+    height: 40px; /* Establece la misma altura que el ancho para que sea un círculo */
+    transform: translate(120%, 450%); /* Mueve el botón a la izquierda y lo centra verticalmente */
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    border-radius: 50%; /* Hace que el botón sea circular */
+}
+
+.carousel-control-next {
+    top: 50%;
+    width: 40px; /* Ajusta el ancho según sea necesario para que sea un círculo */
+    height: 40px; /* Establece la misma altura que el ancho para que sea un círculo */
+    transform: translate(-120%, 450%); /* Mueve el botón a la derecha y lo centra verticalmente */
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    border-radius: 50%; /* Hace que el botón sea circular */
+}
+
+/* Cambia el color al pasar el mouse por encima de los botones */
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo para agregar padding en la parte inferior de las cards del carrusel */
+.carousel-item img {
+    margin-bottom: 40px; /* Ajusta la cantidad de espacio según sea necesario */
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>DiscoInferno</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
+        <a class="navbar-brand" href="#">Guia DiscoInferno</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showContent('reglas')">Reglas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showContent('elementos')">Elementos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Guia DiscoInferno</h1>
+                <p class="lead">Puedes consultar cualquier duda respecto al juego</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="dropdown">
+                    <button class="btn btn-outline-success btn-lg btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Selecciona una opción
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="showMessage('reglas')">Reglas</a>
+                        <a class="dropdown-item" href="#" onclick="showMessage('elementos')">Elementos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mensaje</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Aquí se mostrará el contenido del mensaje -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido de Reglas -->
+    <div class="container mt-4" id="reglas" class="faq-content">
+        <div class="text-center">
+            <h2>Reglas del Juego</h2>
+            <p>Aquí encontrarás las reglas del juego:</p>
+            <ul>
+                <li>Regla 1: Descripción de la regla 1</li>
+                <li>Regla 2: Descripción de la regla 2</li>
+                <li>Regla 3: Descripción de la regla 3</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contenido de Elementos -->
+    <div class="container mt-4" id="elementos" class="faq-content">
+        <div class="text-center">
+            <h2>Elementos del Juego</h2>
+            <p>Selecciona un elemento del juego:</p>
+                <!-- Carrusel para Elementos del Juego -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+          <div class="carousel-item active" onclick="showElement('Evento Cotidiano', 'Estas cartas representan los eventos más comunes. Tienen 3 opciones, cada una con diferente moralidad y resultado.', 'imagen_evento_cotidiano.jpg')">
+            <img src="img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Cotidiano">
+              <div class="carousel-caption">
+                  <h5>Evento Cotidiano</h5>
+              </div>
+          </div>
+          <div class="carousel-item" onclick="showElement('Evento de Emergencia', 'Estas cartas representan los eventos más peligrosos del juego. Tienen algunos beneficios, pero todas las 4 opciones tienen un costo considerable.', 'imagen_evento_emergencia.jpg')">
+              <img src="img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento de Emergencia">
+              <div class="carousel-caption">
+                  <h5>Evento de Emergencia</h5>
+              </div>
+          </div>
+          <div class="carousel-item" onclick="showElement('Evento Único', 'Estas cartas representan los eventos más especiales del juego. Tienen la posibilidad de conseguir un pensamiento, pero tienen costos mayores a los eventos de emergencia.', 'imagen_evento_unico.jpg')">
+              <img src="img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Único">
+              <div class="carousel-caption">
+                  <h5>Evento Único</h5>
+              </div>
+          </div>
+          <!-- Agrega más elementos según sea necesario -->
+          
+      </div>
+      <a class="carousel-control-prev d-flex" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next d-flex" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+  </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="pagina.js"></script>
+
+    <script>
+        function showElement(title, description, image) {
+            // Mostrar la descripción en el modal
+            var modalContent = '<img src="' + image + '" class="img-fluid" alt="' + title + '"><p>' + description + '</p>';
+            document.getElementById("modal-body").innerHTML = modalContent;
+            // Mostrar el modal
+            $('#myModal').modal('show');
+        }
+    </script>
+
+</body>
+
+</html>
