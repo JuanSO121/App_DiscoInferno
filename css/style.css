@@ -38,6 +38,21 @@ p {
     border-color: #28a745;
 }
 
+/* Ajuste para el botón del menú desplegable */
+.dropdown-toggle {
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown-menu {
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown-item {
+    text-align: center;
+}
+
 .modal-content {
     background-color: #fff;
 }
