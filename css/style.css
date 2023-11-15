@@ -1,6 +1,7 @@
 body {
     padding-top: 60px;
     background-color: #f8f9fa;
+    color: #343a40; /* Color de texto principal */
 }
 
 .navbar {
@@ -55,6 +56,7 @@ p {
 
 .modal-content {
     background-color: #fff;
+    color: #343a40;
 }
 
 #faq-content {
