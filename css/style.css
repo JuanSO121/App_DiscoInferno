@@ -1,80 +1,58 @@
 body {
-    padding-top: 60px;
-    background-color: #f8f9fa;
-    color: #343a40; /* Color de texto principal */
+    background-color: #f5f0fa;
+    font-family: 'Arial', sans-serif;
+    color: #3e3e3e;
 }
 
 .navbar {
-    background-color: #17a2b8;
+    background-color: #6a5acd; /* Morado oscuro */
 }
 
-.navbar-brand {
-    color: #fff;
-    font-weight: bold;
+.navbar-brand, .navbar-toggler-icon, .nav-link {
+    color: #ffffff; /* Blanco */
 }
 
-.navbar-toggler-icon {
-    background-color: #fff;
+.navbar-toggler {
+    border-color: #ffffff; /* Blanco */
+}
+
+.navbar-toggler:focus, .navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .container {
-    margin-top: 20px;
+    background-color: #ffffff; /* Blanco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
 }
 
-h1 {
-    color: #007bff;
-}
 
 p {
-    color: #6c757d;
-}
-
-.btn-primary {
-    background-color: #28a745;
-    border-color: #28a745;
+    color: #808080; /* Gris */
 }
 
 .btn-outline-success {
-    color: #289ca7;
-    border-color: #28a745;
+    color: #6a5acd; /* Morado oscuro */
+    border-color: #6a5acd; /* Morado oscuro */
 }
 
-/* Ajuste para el botón del menú desplegable */
-.dropdown-toggle {
-    width: 100%;
-    text-align: center;
+.btn-outline-success:hover {
+    background-color: #6a5acd; /* Morado oscuro */
+    color: #ffffff; /* Blanco */
 }
 
-.dropdown-menu {
-    width: 100%;
-    text-align: center;
+.carousel-control-prev, .carousel-control-next {
+    background-color: #6a5acd; /* Morado oscuro */
+    border: none;
 }
 
-.dropdown-item {
-    text-align: center;
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #ffffff; /* Blanco */
 }
 
-.modal-content {
-    background-color: #fff;
-    color: #343a40;
-}
 
-#faq-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-}
 /* Estilo para hacer los botones circulares y acercarlos al carrusel */
 .carousel-control-prev {
     top: 50%;
