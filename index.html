@@ -19,10 +19,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showContent('faq-content')">Reglas</a>
+                    <a class="nav-link" href="#" onclick="showContent('reglas')">Reglas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Elementos</a>
+                    <a class="nav-link" href="#" onclick="showContent('elementos')">Elementos</a>
                 </li>
             </ul>
         </div>
@@ -42,9 +42,8 @@
                         Selecciona una opción
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" onclick="showMessage('Opción 1')">Opción 1</a>
-                        <a class="dropdown-item" href="#" onclick="showMessage('Opción 2')">Opción 2</a>
-                        <a class="dropdown-item" href="#" onclick="showMessage('Opción 3')">Opción 3</a>
+                        <a class="dropdown-item" href="#" onclick="showMessage('reglas')">Reglas</a>
+                        <a class="dropdown-item" href="#" onclick="showMessage('elementos')">Elementos</a>
                     </div>
                 </div>
             </div>
@@ -71,22 +70,107 @@
         </div>
     </div>
 
-    <div class="container mt-4" id="faq-content" class="faq-content">
+    <div class="container mt-4" id="reglas" class="faq-content">
         <div class="text-center">
-            <h2>Preguntas frecuentes</h2>
-            <p>Explora algunas preguntas y respuestas comunes:</p>
+            <h2>Reglas del Juego</h2>
+            <p>Aquí encontrarás las reglas del juego:</p>
+            <ul>
+                <li>Regla 1: Descripción de la regla 1</li>
+                <li>Regla 2: Descripción de la regla 2</li>
+                <li>Regla 3: Descripción de la regla 3</li>
+            </ul>
         </div>
-        <ul>
-            <li><strong>Pregunta 1:</strong> Respuesta 1</li>
-            <li><strong>Pregunta 2:</strong> Respuesta 2</li>
-            <li><strong>Pregunta 3:</strong> Respuesta 3</li>
-        </ul>
+    </div>
+
+    <div class="container mt-4" id="elementos" class="faq-content">
+        <div class="text-center">
+            <h2>Elementos del Juego</h2>
+            <p>Selecciona un elemento del juego:</p>
+            <div class="row">
+                <div class="col-6">
+                    <div class="card" onclick="showElement('Evento Cotidiano', 'Estas cartas representan los eventos más comunes. Tienen 3 opciones, cada una con diferente moralidad y resultado.', 'imagen_evento_cotidiano.jpg')">
+                        <img src="imagen_evento_cotidiano.jpg" class="card-img-top" alt="Evento Cotidiano">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento Cotidiano</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card" onclick="showElement('Evento de Emergencia', 'Estas cartas representan los eventos más peligrosos del juego. Tienen algunos beneficios, pero todas las 4 opciones tienen un costo considerable.', 'imagen_evento_emergencia.jpg')">
+                        <img src="imagen_evento_emergencia.jpg" class="card-img-top" alt="Evento de Emergencia">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento de Emergencia</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mt-4">
+                    <div class="card" onclick="showElement('Evento Único', 'Estas cartas representan los eventos más especiales del juego. Tienen la posibilidad de conseguir un pensamiento, pero tienen costos mayores a los eventos de emergencia.', 'imagen_evento_unico.jpg')">
+                        <img src="imagen_evento_unico.jpg" class="card-img-top" alt="Evento Único">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento Único</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mt-4">
+                    <div class="card" onclick="showElement('Cartas de Objeto', 'Las cartas de objeto son cartas que tienen efectos variados. Pueden interactuar con otros jugadores o afectar tus propias estadísticas.', 'imagen_cartas_objeto.jpg')">
+                        <img src="imagen_cartas_objeto.jpg" class="card-img-top" alt="Cartas de Objeto">
+                        <div class="card-body">
+                            <h5 class="card-title">Cartas de Objeto</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mt-4">
+                    <div class="card" onclick="showElement('Dados', 'Se requerirán varios tipos de dados para el juego. Se utilizan tanto para movilizarse como para interactuar con diferentes aspectos del juego.', 'imagen_dados.jpg')">
+                        <img src="imagen_dados.jpg" class="card-img-top" alt="Dados">
+                        <div class="card-body">
+                            <h5 class="card-title">Dados</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mt-4">
+                    <div class="card" onclick="showElement('Fichas', 'Las fichas se utilizan para representar a los jugadores en el tablero.', 'imagen_fichas.jpg')">
+                        <img src="imagen_fichas.jpg" class="card-img-top" alt="Fichas">
+                        <div class="card-body">
+                            <h5 class="card-title">Fichas</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mt-4">
+                    <div class="card" onclick="showElement('Tablero', 'El tablero es la zona jugable del juego. Contiene todas las casillas que activarán los eventos. Habrá un total de 8 tableros.', 'imagen_tablero.jpg')">
+                        <img src="imagen_tablero.jpg" class="card-img-top" alt="Tablero">
+                        <div class="card-body">
+                            <h5 class="card-title">Tablero</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mt-4">
+                    <div class="card" onclick="showElement('Rastreador de Vida y Sanidad', 'Es un pequeño instrumento con un engranaje que al voltear cambia el número, utilizado como rastreador de vida y sanidad en el juego.', 'imagen_rastreador.jpg')">
+                        <img src="imagen_rastreador.jpg" class="card-img-top" alt="Rastreador de Vida y Sanidad">
+                        <div class="card-body">
+                            <h5 class="card-title">Rastreador de Vida y Sanidad</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 mt-4">
+                    <div class="card" onclick="showElement('Cartas de Pensamiento', 'Las cartas de pensamiento representan los pensamientos que tiene tu personaje. Mencionan las habilidades que se ganan de acuerdo a ese pensamiento.', 'imagen_cartas_pensamiento.jpg')">
+                        <img src="imagen_cartas_pensamiento.jpg" class="card-img-top" alt="Cartas de Pensamiento">
+                        <div class="card-body">
+                            <h5 class="card-title">Cartas de Pensamiento</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="pagina.js"></script>
+
+    <script>
+
+    </script>
 
 </body>
 
