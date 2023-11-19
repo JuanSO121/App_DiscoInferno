@@ -2,12 +2,15 @@ function showContent(contentType) {
     // Desactiva todos los contenidos
     document.getElementById("instrucciones").style.display = "none";
     document.getElementById("elementos").style.display = "none";
+    document.getElementById("pensamientos").style.display = "none";
 
     // Muestra el contenido seleccionado
     if (contentType === 'instrucciones') {
         document.getElementById("instrucciones").style.display = "block";
     } else if (contentType === 'elementos') {
         document.getElementById("elementos").style.display = "block";
+    } else if (contentType === 'pensamientos') {
+        document.getElementById("pensamientos").style.display = "block";
     }
 }
 
@@ -79,3 +82,4 @@ function recuperarVida(cantidad) {
 
 // Inicializar el contador de vidas al cargar la página
 actualizarVidas();
+
