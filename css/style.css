@@ -85,3 +85,11 @@ p {
 .carousel-item img {
     margin-bottom: 40px; /* Ajusta la cantidad de espacio según sea necesario */
 }
+
+
+/* Añade al final del archivo styles.css */
+.corazon-img {
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: 100px;
+    margin: 5px; /* Ajusta el margen según tus necesidades */
+}
