@@ -106,6 +106,21 @@ p {
     }
 }
 
+/* Tamaño predeterminado para pantallas grandes (computadoras) */
+.cerebro-img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+/* Ajustes para pantallas más pequeñas (dispositivos móviles) */
+@media (max-width: 768px) {
+    .cerebro-img {
+        width: 50px; /* Ajusta el tamaño según tus necesidades para dispositivos móviles */
+        height: 50px;
+        margin: 3px; /* Ajusta el margen según tus necesidades para dispositivos móviles */
+    }
+}
 
 /* Estilos para botones del modal de confirmación */
 .modal-footer .btn-secondary {
@@ -153,24 +168,24 @@ p {
     border-color: #563d7c; /* Morado más oscuro para resaltar */
 }
 
-.btn-perder-vida {
+.btn-perder-vida .btn-perder-sanidad {
     background-color: #777e8b; /* Rojo */
     color: #ffffff; /* Blanco */
     border-color: #777e8b; /* Rojo */
 }
 
-.btn-perder-vida:hover {
+.btn-perder-vida:hover .btn-perder-sanidad:hover{
     background-color: #454648; /* Rojo más oscuro para resaltar */
     border-color: #454648; /* Rojo más oscuro para resaltar */
 }
 
-.btn-recuperar-vida .btn-success {
+.btn-recuperar-vida .btn-success .btn-recuperar-sanidad{
     background-color: #8b4caf; /* Verde */
     color: rgb(255, 255, 255); /* Blanco */
     border-color: #8b4caf; /* Verde */
 }
 
-.btn-recuperar-vida:hover {
+.btn-recuperar-vida:hover .btn-recuperar-sanidad:hover {
     background-color: #8c45a0; /* Verde más oscuro para resaltar */
     border-color: #8c45a0; /* Verde más oscuro para resaltar */
 }

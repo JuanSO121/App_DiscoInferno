@@ -83,3 +83,45 @@ function recuperarVida(cantidad) {
 // Inicializar el contador de vidas al cargar la página
 actualizarVidas();
 
+
+// Contador de vidas
+let sanidad = 6;
+
+
+
+function actualizarSanidad() {
+    const sanidadContainer = document.getElementById('sanidad-container');
+    sanidadContainer.innerHTML = '';
+
+    for (let i = 0; i < 6; i++) {
+        const cerebro = document.createElement('img');
+        cerebro.classList.add('cerebro-img');
+        if (i < sanidad) {
+            cerebro.src = './img/sanidad.png'; // Imagen de corazón
+        } else {
+            cerebro.src = './img/sanidad_rota.png'; // Imagen de corazón roto
+        }
+        sanidadContainer.appendChild(cerebro);
+    }
+}
+
+// Función para cambiar la cantidad de Sanidad
+function cambiarSanidad(cantidad) {
+    sanidad += cantidad;
+    // Asegurarse de que Sanidad no sea menor que 0 o mayor que 6
+    sanidad = Math.max(0, Math.min(6, sanidad));
+    actualizarSanidad();
+}
+
+// Funciones específicas para perder y recuperar Sanidad con cantidad configurable
+function perderSanidad(cantidad) {
+    cambiarSanidad(-cantidad);
+}
+
+function recuperarSanidad(cantidad) {
+    cambiarSanidad(+cantidad);  // Cambiar el signo a positivo
+}
+
+
+// Inicializar el contador de Sanidad al cargar la página
+actualizarSanidad();
