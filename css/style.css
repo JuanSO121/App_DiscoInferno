@@ -90,10 +90,32 @@ p {
 
 /* Añade al final del archivo styles.css */
 .corazon-img {
-    width: 100px; /* Ajusta el tamaño según tus necesidades */
-    height: 100px;
-    margin: 5px; /* Ajusta el margen según tus necesidades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Estilos para botones de perder y recuperar vidas */
+.btn-perder-vida,
+.btn-recuperar-vida {
+    width: 100%; /* O ajusta según tus necesidades */
+    margin-bottom: 10px; /* Ajusta el margen inferior según tus necesidades */
+}
+
+/* Establecer tamaño máximo para evitar imágenes excesivamente grandes en dispositivos grandes */
+.corazon-img img {
+    max-width: 20%;
+    max-height: 20%;
+}
+
+/* Establecer tamaño específico para dispositivos pequeños, como teléfonos */
+@media (max-width: 576px) {
+    .corazon-img img {
+        width: 50px; /* Ajusta el tamaño según tus necesidades */
+        height: 50px;
+    }
+}
+
 
 /* Estilos para botones del modal de confirmación */
 .modal-footer .btn-secondary {
