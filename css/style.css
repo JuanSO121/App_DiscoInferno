@@ -189,3 +189,15 @@ p {
     background-color: #8c45a0; /* Verde más oscuro para resaltar */
     border-color: #8c45a0; /* Verde más oscuro para resaltar */
 }
+
+#credito-container {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+#credito-img {
+    width: 50px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto;
+    margin-right: 10px;
+}

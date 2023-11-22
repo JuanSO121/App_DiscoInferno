@@ -18,20 +18,6 @@
                 <p class="lead">Por este medio puedes ver e interactuar con tu </p>
             </div>
         </div>
-        <div class="row mt-4">
-            <div class="col-12">
-                <div class="dropdown">
-                    <button class="btn btn-outline-success btn-lg btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #6a5acd; color: #ffffff;">
-                        Selecciona una opción
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" onclick="showMessage('instrucciones')">instrucciones</a>
-                        <a class="dropdown-item" href="#" onclick="showMessage('elementos')">Elementos</a>
-                        <a class="dropdown-item" href="#" onclick="showMessage('pensamientos')">pensamientos</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 
@@ -55,14 +41,49 @@
         </div>
     </div>
 
+<!-- Contenedor para seleccionar tipo de carta y valores -->
+<!-- <div class="container mt-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>Seleccionar Carta</h2>
+            <form id="cartaForm">
+                <div class="form-group">
+                    <label for="tipoCarta">Tipo de Carta:</label>
+                    <select class="form-control" id="tipoCarta" required>
+                        <option value="item">Item</option>
+                        <option value="pensamiento">Pensamiento</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nombreCarta">Nombre de la Carta:</label>
+                    <input type="text" class="form-control" id="nombreCarta" required>
+                </div>
+                <div class="form-group">
+                    <label for="valorVida">Valor de Vida:</label>
+                    <input type="number" class="form-control" id="valorVida" min="1" value="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="valorSanidad">Valor de Sanidad:</label>
+                    <input type="number" class="form-control" id="valorSanidad" min="1" value="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="valorCreditos">Valor de Créditos:</label>
+                    <input type="number" class="form-control" id="valorCreditos" min="1" value="0" required>
+                </div>
+                <button type="button" class="btn btn-success" onclick="agregarCarta()">Agregar Carta</button>
+            </form>
+        </div>
+    </div>
+</div> -->
+
 <!-- Contenedor del contador de vidas -->
 <div class="container mt-4">
     <div class="row">
         <div class="col-12 text-center">
-            <h2>Contador de Vidas</h2>
+            <h2>Vidas</h2>
             <div id="vidas-container" class="d-flex justify-content-center align-items-center"></div>
             <div class="mt-3">
-                <label for="cantidadVidas">Cantidad de Vidas:</label>
+                <label for="cantidadVidas">Cantidad:</label>
                 <input type="number" id="cantidadVidas" min="1" value="1">
             </div>
             <button class="btn btn-perder-vida" onclick="perderVida(document.getElementById('cantidadVidas').value)">Perder Vida</button>
@@ -75,10 +96,10 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-12 text-center">
-            <h2>Contador de Sanidad</h2>
+            <h2>Sanidad</h2>
             <div id="sanidad-container" class="d-flex justify-content-center align-items-center"></div>
             <div class="mt-3">
-                <label for="cantidadSanidad">Cantidad de Sanidad:</label>
+                <label for="cantidadSanidad">Cantidad:</label>
                 <input type="number" id="cantidadSanidad" min="1" value="1">
             </div>
             <button class="btn btn-perder-sanidad" onclick="perderSanidad(document.getElementById('cantidadSanidad').value)">Perder Sanidad</button>
@@ -88,192 +109,34 @@
 </div>
 
 
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>Créditos</h2>
+            <div id="credito-container" class="d-flex justify-content-center align-items-center">
+                <img id="credito-img" src="./img/credito.png" alt="Crédito" class="mr-2">
+                <span id="credito-count">0</span>
+            </div>
+            <div class="mt-3">
+                <label for="cantidadCreditos">Cantidad:</label>
+                <input type="number" id="cantidadCreditos" min="1" value="1">
+            </div>
+            <button class="btn btn-perder-Creditos" onclick="perderCreditos(document.getElementById('cantidadCreditos').value)">Reducir Créditos</button>
+            <button class="btn ml-2 btn-recuperar-Creditos" onclick="recuperarCreditos(document.getElementById('cantidadCreditos').value)">Añadir Créditos</button>
+        </div>
+    </div>
+</div>
 
-    <!-- Contenido de instrucciones -->
-    <div class="container mt-4" id="instrucciones" class="faq-content">
-        <div class="text-center">
-            <h2>instrucciones del Juego</h2>
-            <p>Aquí encontrarás las instrucciones del juego:</p>
-            <ul>
-                <li>Regla 1: Descripción de la regla 1</li>
-                <li>Regla 2: Descripción de la regla 2</li>
-                <li>Regla 3: Descripción de la regla 3</li>
+<!-- <div class="container mt-4" id="historial-cartas">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>Historial de Cartas Usadas</h2>
+            <ul id="historial-lista" class="list-group">
+               
             </ul>
         </div>
     </div>
-
-    <!-- Contenido de Elementos -->
-    <div class="container mt-4" id="elementos" class="faq-content">
-        <div class="text-center">
-            <h2>Elementos del Juego</h2>
-            <p>Selecciona un elemento del juego:</p>
-            <!-- Carrusel para Elementos del Juego -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-
-                    <div class="carousel-item active" onclick="showElement('Evento Cotidiano', 'Estas cartas representan los eventos más comunes. Tienen 3 opciones, cada una con diferente moralidad y resultado.', './img/item.png')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Cotidiano">
-                        <div class="carousel-caption">
-                            <h5>Evento Cotidiano</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item" onclick="showElement('Evento de Emergencia', 'Estas cartas representan los eventos más peligrosos del juego. Tienen algunos beneficios, pero todas las 4 opciones tienen un costo considerable.', './img/item.png')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento de Emergencia">
-                        <div class="carousel-caption">
-                            <h5>Evento de Emergencia</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item" onclick="showElement('Evento Único', 'Estas cartas representan los eventos más especiales del juego. Tienen la posibilidad de conseguir un pensamiento, pero tienen costos mayores a los eventos de emergencia.', './img/item.png')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Único">
-                        <div class="carousel-caption">
-                            <h5>Evento Único</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Cartas de Objeto', 'Las cartas de objeto son cartas que tienen efectos variados. Pueden interactuar con otros jugadores o afectar tus propias estadísticas.', 'imagen_cartas_objeto.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Cartas de Objeto">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Cartas de Objeto</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Dados', 'Se requerirán varios tipos de dados para el juego. Se utilizan tanto para movilizarse como para interactuar con diferentes aspectos del juego.', 'imagen_dados.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Dados">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Dados</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Fichas', 'Las fichas se utilizan para representar a los jugadores en el tablero.', 'imagen_fichas.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Fichas">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Fichas</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Tablero', 'El tablero es la zona jugable del juego. Contiene todas las casillas que activarán los eventos. Habrá un total de 8 tableros.', 'imagen_tablero.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Tablero">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Tablero</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Rastreador de Vida y Sanidad', 'Es un pequeño instrumento con un engranaje que al voltear cambia el número, utilizado como rastreador de vida y sanidad en el juego.', 'imagen_rastreador.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Rastreador de Vida y Sanidad">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Rastreador de Vida y Sanidad</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Cartas de Pensamiento', 'Las cartas de pensamiento representan los pensamientos que tiene tu personaje. Mencionan las habilidades que se ganan de acuerdo a ese pensamiento.', 'imagen_cartas_pensamiento.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Cartas de Pensamiento">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Cartas de Pensamiento</h5>
-                        </div>
-                    </div>
-                    <!-- Agrega más elementos según sea necesario -->
-
-                </div>
-                <a class="carousel-control-prev d-flex" href="#carouselExampleIndicators" role="button" data-slide="prev" style="width:40px">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next d-flex" href="#carouselExampleIndicators" role="button" data-slide="next" style="width:40px">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contenido de Elementos -->
-    <div class="container mt-4" id="pensamientos" class="faq-content">
-        <div class="text-center">
-            <h2>Pensamientos</h2>
-            <p>Puedes Almacenar, utilizar y Visualizar los Pensamientos que has conseguido:</p>
-            <!-- Carrusel para Elementos del Juego -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-
-                    <div class="carousel-item active" onclick="showElement('Evento Cotidiano', 'Estas cartas representan los eventos más comunes. Tienen 3 opciones, cada una con diferente moralidad y resultado.', './img/item.png')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Cotidiano">
-                        <div class="carousel-caption">
-                            <h5>Evento Cotidiano</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item" onclick="showElement('Evento de Emergencia', 'Estas cartas representan los eventos más peligrosos del juego. Tienen algunos beneficios, pero todas las 4 opciones tienen un costo considerable.', './img/item.png')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento de Emergencia">
-                        <div class="carousel-caption">
-                            <h5>Evento de Emergencia</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item" onclick="showElement('Evento Único', 'Estas cartas representan los eventos más especiales del juego. Tienen la posibilidad de conseguir un pensamiento, pero tienen costos mayores a los eventos de emergencia.', './img/item.png')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Único">
-                        <div class="carousel-caption">
-                            <h5>Evento Único</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Cartas de Objeto', 'Las cartas de objeto son cartas que tienen efectos variados. Pueden interactuar con otros jugadores o afectar tus propias estadísticas.', 'imagen_cartas_objeto.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Cartas de Objeto">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Cartas de Objeto</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Dados', 'Se requerirán varios tipos de dados para el juego. Se utilizan tanto para movilizarse como para interactuar con diferentes aspectos del juego.', 'imagen_dados.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Dados">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Dados</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Fichas', 'Las fichas se utilizan para representar a los jugadores en el tablero.', 'imagen_fichas.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Fichas">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Fichas</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Tablero', 'El tablero es la zona jugable del juego. Contiene todas las casillas que activarán los eventos. Habrá un total de 8 tableros.', 'imagen_tablero.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Tablero">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Tablero</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Rastreador de Vida y Sanidad', 'Es un pequeño instrumento con un engranaje que al voltear cambia el número, utilizado como rastreador de vida y sanidad en el juego.', 'imagen_rastreador.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Rastreador de Vida y Sanidad">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Rastreador de Vida y Sanidad</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Cartas de Pensamiento', 'Las cartas de pensamiento representan los pensamientos que tiene tu personaje. Mencionan las habilidades que se ganan de acuerdo a ese pensamiento.', 'imagen_cartas_pensamiento.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Cartas de Pensamiento">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Cartas de Pensamiento</h5>
-                        </div>
-                    </div>
-                    <!-- Agrega más elementos según sea necesario -->
-
-                </div>
-                <a class="carousel-control-prev d-flex" href="#carouselExampleIndicators" role="button" data-slide="prev" style="width:40px">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next d-flex" href="#carouselExampleIndicators" role="button" data-slide="next" style="width:40px">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-    
-
-    
+</div> -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

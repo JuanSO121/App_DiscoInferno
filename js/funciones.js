@@ -84,7 +84,7 @@ function recuperarVida(cantidad) {
 actualizarVidas();
 
 
-// Contador de vidas
+// Contador de sanidad
 let sanidad = 6;
 
 
@@ -125,3 +125,55 @@ function recuperarSanidad(cantidad) {
 
 // Inicializar el contador de Sanidad al cargar la página
 actualizarSanidad();
+
+        let creditos = 0;
+
+        function actualizarCreditos() {
+            const creditoCount = document.getElementById('credito-count');
+            creditoCount.textContent = creditos;
+        }
+
+        // Función para cambiar la cantidad de créditos
+        function cambiarCreditos(cantidad) {
+            creditos += cantidad;
+            // Asegurarse de que los créditos no sean negativos
+            creditos = Math.max(0, creditos);
+            actualizarCreditos();
+        }
+
+        // Funciones específicas para perder y recuperar créditos con cantidad configurable
+        function perderCreditos(cantidad) {
+            cambiarCreditos(-cantidad);
+        }
+
+        function recuperarCreditos(cantidad) {
+            cambiarCreditos(+cantidad);  // Cambiar el signo a positivo
+        }
+
+        // Inicializar el contador de créditos al cargar la página
+        actualizarCreditos();
+
+// En tu archivo funciones.js
+
+// function agregarCarta() {
+
+//     var tipoCarta = document.getElementById("tipoCarta").value;
+//     var nombreCarta = document.getElementById("nombreCarta").value;
+//     var valorVida = parseInt(document.getElementById("valorVida").value);
+//     var valorSanidad = parseInt(document.getElementById("valorSanidad").value);
+//     var valorCreditos = parseInt(document.getElementById("valorCreditos").value);
+
+ 
+//     var historialLista = document.getElementById("historial-lista");
+//     var nuevaCarta = document.createElement("li");
+//     nuevaCarta.className = "list-group-item";
+//     nuevaCarta.textContent = `${tipoCarta} - ${nombreCarta} | Vida: +${valorVida}, Sanidad: +${valorSanidad}, Créditos: +${valorCreditos}`;
+//     historialLista.appendChild(nuevaCarta);
+
+
+//     document.getElementById("tipoCarta").value = "item";
+//     document.getElementById("nombreCarta").value = "";
+//     document.getElementById("valorVida").value = 1;
+//     document.getElementById("valorSanidad").value = 1;
+//     document.getElementById("valorCreditos").value = 1;
+// }
