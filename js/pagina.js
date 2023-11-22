@@ -2,12 +2,15 @@ function showContent(contentType) {
     // Desactiva todos los contenidos
     document.getElementById("reglas").style.display = "none";
     document.getElementById("elementos").style.display = "none";
+    document.getElementById("historia").style.display = "none";
 
     // Muestra el contenido seleccionado
     if (contentType === 'reglas') {
         document.getElementById("reglas").style.display = "block";
     } else if (contentType === 'elementos') {
         document.getElementById("elementos").style.display = "block";
+    } else if (contentType === 'historia') {
+        document.getElementById("historia").style.display = "block";
     }
 }
 
@@ -17,15 +20,15 @@ function showMessage(contentType) {
     showContent(contentType);
 }
 
-// Añade este evento al cargar la página para asegurarte de que uno de los contenidos esté visible
 window.onload = function () {
-    showContent('reglas'); // Puedes cambiar esto a 'elementos' si deseas que el otro contenido esté activo inicialmente
+    showContent('reglas'); 
 };
 
 function showElement(elementName, elementDescription, elementImage) {
     // Construir el contenido del modal con información detallada del elemento seleccionado
     var modalContent = `
         <img src="${elementImage}" class="img-fluid" alt="${elementName}">
+        <hr></hr>
         <h5>${elementName}</h5>
         <p>${elementDescription}</p>
     `;
