@@ -50,9 +50,13 @@ p {
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: #ffffff; /* Blanco */
+    background-color: #000000; /* Blanco */
 }
 
+.half-size-image {
+    width: 50%; /* Ajusta el tamaño según tus necesidades (50% reducirá a la mitad) */
+    height: auto; /* Mantén la proporción original de la imagen */
+}
 
 /* Estilo para hacer los botones circulares y acercarlos al carrusel */
 .carousel-control-prev {
@@ -62,7 +66,7 @@ p {
     transform: translate(120%, 450%); /* Mueve el botón a la izquierda y lo centra verticalmente */
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
-    color: #fff;
+    color: #000000;
     border-radius: 50%; /* Hace que el botón sea circular */
 }
 
@@ -73,7 +77,7 @@ p {
     transform: translate(-120%, 450%); /* Mueve el botón a la derecha y lo centra verticalmente */
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
-    color: #fff;
+    color: #000000;
     border-radius: 50%; /* Hace que el botón sea circular */
 }
 
@@ -87,7 +91,9 @@ p {
     margin-bottom: 40px; /* Ajusta la cantidad de espacio según sea necesario */
 }
 
-
+.carousel-item {
+    color: #000000; /* Negro */
+}
 /* Añade al final del archivo styles.css */
 
 /* Tamaño predeterminado para pantallas grandes (computadoras) */

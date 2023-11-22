@@ -19,13 +19,18 @@
             </div>
         </div>
         <div class="row mt-4">
+            <div class="col-12 text-center">
+                <img src="./img/caja.png" alt="Portada" class="img-fluid half-size-image">
+            </div>
+        </div>
+        <div class="row mt-4">
             <div class="col-12">
                 <div class="dropdown">
                     <button class="btn btn-outline-success btn-lg btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #6a5acd; color: #ffffff;">
                         Selecciona una opción
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" onclick="showMessage('reglas')">Reglas</a>
+                        <a class="dropdown-item" href="#" onclick="showMessage('reglas')">Descripcion</a>
                         <a class="dropdown-item" href="#" onclick="showMessage('elementos')">Elementos</a>
                     </div>
                 </div>
@@ -57,12 +62,13 @@
     <!-- Contenido de Reglas -->
     <div class="container mt-4" id="reglas" class="faq-content">
         <div class="text-center">
-            <h2>Reglas del Juego</h2>
-            <p>Aquí encontrarás las reglas del juego:</p>
+            <h2>Descripcion</h2>
             <ul>
-                <li>Regla 1: Descripción de la regla 1</li>
-                <li>Regla 2: Descripción de la regla 2</li>
-                <li>Regla 3: Descripción de la regla 3</li>
+                <p>“Disco Inferno” es un juego de mesa con temática surrealista bajo un lente psicodélico en el
+                    que los jugadores toman el rol de un profesional, ya sea un abogado, doctor, político e incluso
+                    un desempleado, todo con el propósito de lograr sobrevivir en un mundo distópico como es el
+                    nuestro, reflejando la propia dificultad de la vida diaria.</p>
+
             </ul>
         </div>
     </div>
@@ -76,66 +82,47 @@
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
 
-                    <div class="carousel-item active" onclick="showElement('Evento Cotidiano', 'Estas cartas representan los eventos más comunes. Tienen 3 opciones, cada una con diferente moralidad y resultado.', './img/item.png')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Cotidiano">
+                    <div class="carousel-item active" onclick="showElement('Evento Cotidiano', 'Estas cartas representan los eventos más comunes. Tienen 3 opciones, cada una con diferente moralidad y resultado.', './img/unic.png')">
+                        <img src="./img/cotidiano.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Cotidiano">
                         <div class="carousel-caption">
                             <h5>Evento Cotidiano</h5>
                         </div>
                     </div>
-                    <div class="carousel-item" onclick="showElement('Evento de Emergencia', 'Estas cartas representan los eventos más peligrosos del juego. Tienen algunos beneficios, pero todas las 4 opciones tienen un costo considerable.', './img/item.png')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento de Emergencia">
+                    <div class="carousel-item" onclick="showElement('Evento de Emergencia', 'Estas cartas representan los eventos más peligrosos del juego. Tienen algunos beneficios, pero todas las 4 opciones tienen un costo considerable.', './img/emergen.png')">
+                        <img src="./img/emerge.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento de Emergencia">
                         <div class="carousel-caption">
                             <h5>Evento de Emergencia</h5>
                         </div>
                     </div>
-                    <div class="carousel-item" onclick="showElement('Evento Único', 'Estas cartas representan los eventos más especiales del juego. Tienen la posibilidad de conseguir un pensamiento, pero tienen costos mayores a los eventos de emergencia.', './img/item.png')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Único">
+                    <div class="carousel-item" onclick="showElement('Evento Único', 'Estas cartas representan los eventos más especiales del juego. Tienen la posibilidad de conseguir un pensamiento, pero tienen costos mayores a los eventos de emergencia.', './img/unico2.png')">
+                        <img src="./img/unico.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Evento Único">
                         <div class="carousel-caption">
                             <h5>Evento Único</h5>
                         </div>
                     </div>
 
-                    <div class="carousel-item" onclick="showElement('Cartas de Objeto', 'Las cartas de objeto son cartas que tienen efectos variados. Pueden interactuar con otros jugadores o afectar tus propias estadísticas.', 'imagen_cartas_objeto.jpg')">
+                    <div class="carousel-item" onclick="showElement('Cartas de Objeto', 'Las cartas de objeto son cartas que tienen efectos variados. Pueden interactuar con otros jugadores o afectar tus propias estadísticas.', './img/objetos.png')">
                         <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Cartas de Objeto">
                         <div class="carousel-caption">
-                            <h5 class="card-title">Cartas de Objeto</h5>
+                            <h5 class="card-title">Items</h5>
                         </div>
                     </div>
 
-                    <div class="carousel-item" onclick="showElement('Dados', 'Se requerirán varios tipos de dados para el juego. Se utilizan tanto para movilizarse como para interactuar con diferentes aspectos del juego.', 'imagen_dados.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Dados">
+                    <div class="carousel-item" onclick="showElement('Cartas de Pensamiento', 'Las cartas de pensamiento representan los pensamientos que tiene tu personaje. Mencionan las habilidades que se ganan de acuerdo a ese pensamiento.', './img/pensar.png')">
+                        <img src="./img/pensamiento.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Cartas de Pensamiento">
                         <div class="carousel-caption">
-                            <h5 class="card-title">Dados</h5>
+                            <h5 class="card-title">Pensamientos</h5>
                         </div>
                     </div>
 
-                    <div class="carousel-item" onclick="showElement('Fichas', 'Las fichas se utilizan para representar a los jugadores en el tablero.', 'imagen_fichas.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Fichas">
+                    <div class="carousel-item" onclick="showElement('Rastreador de Vida y Sanidad', 'Es un pequeño instrumento con un engranaje que al voltear cambia el número, utilizado como rastreador de vida y sanidad en el juego.', './img/vida.png')">
+                        <img src="./img/vida.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Rastreador de Vida y Sanidad">
                         <div class="carousel-caption">
-                            <h5 class="card-title">Fichas</h5>
+                            <h5 class="card-title">Vida y Sanidad</h5>
                         </div>
                     </div>
 
-                    <div class="carousel-item" onclick="showElement('Tablero', 'El tablero es la zona jugable del juego. Contiene todas las casillas que activarán los eventos. Habrá un total de 8 tableros.', 'imagen_tablero.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Tablero">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Tablero</h5>
-                        </div>
-                    </div>
 
-                    <div class="carousel-item" onclick="showElement('Rastreador de Vida y Sanidad', 'Es un pequeño instrumento con un engranaje que al voltear cambia el número, utilizado como rastreador de vida y sanidad en el juego.', 'imagen_rastreador.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Rastreador de Vida y Sanidad">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Rastreador de Vida y Sanidad</h5>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item" onclick="showElement('Cartas de Pensamiento', 'Las cartas de pensamiento representan los pensamientos que tiene tu personaje. Mencionan las habilidades que se ganan de acuerdo a ese pensamiento.', 'imagen_cartas_pensamiento.jpg')">
-                        <img src="./img/item.png" class="img-fluid mx-auto d-block" style="max-width: 300px;" alt="Cartas de Pensamiento">
-                        <div class="carousel-caption">
-                            <h5 class="card-title">Cartas de Pensamiento</h5>
-                        </div>
-                    </div>
                     <!-- Agrega más elementos según sea necesario -->
 
                 </div>
